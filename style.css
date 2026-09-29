@@ -173,19 +173,29 @@ header {
 
 .logo {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
-    line-height: 0;
+    line-height: 1;
+    gap: 4px;
 }
 
 .logo img {
-    width: 110px;
-    height: 58px;
+    width: 170px;
+    height: 100px;
     object-fit: contain;
     display: block;
     border-radius: 6px;
 }
 
+.logo-text {
+    color: var(--white);
+    font-family: 'Sora', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1;
+}
 .nav-links {
     display: flex;
     align-items: center;
@@ -780,5 +790,195 @@ footer {
 
     section {
         padding: 72px 0;
+    }
+}
+/* =========================================================
+   Specializations Carousel
+   ========================================================= */
+
+.spec-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.spec-carousel .spec-grid {
+    display: flex;
+    gap: 26px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    flex: 1;
+    padding: 8px 4px 18px;
+}
+
+.spec-carousel .spec-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.spec-carousel .spec-card {
+    flex: 0 0 calc((100% - 52px) / 3);
+    min-height: 320px;
+}
+
+.carousel-btn {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--navy-950);
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+    z-index: 5;
+}
+
+.carousel-btn:hover {
+    background: var(--sky-500);
+    transform: scale(1.05);
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .spec-carousel .spec-card {
+        flex: 0 0 calc((100% - 26px) / 2);
+    }
+}
+
+/* Mobile */
+@media (max-width: 699px) {
+    .spec-carousel {
+        gap: 10px;
+    }
+
+    .spec-carousel .spec-card {
+        flex: 0 0 100%;
+    }
+
+    .carousel-btn {
+        width: 38px;
+        height: 38px;
+    }
+}
+/* =========================================================
+   Drone Images Carousel - Point 8
+   ========================================================= */
+
+.drone-carousel {
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+}
+
+.drone-carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+}
+
+.drone-carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.drone-carousel-track img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scroll-snap-align: start;
+}
+
+.drone-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(10, 20, 32, 0.75);
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    transition: 0.2s ease;
+}
+
+.drone-carousel-btn:hover {
+    background: var(--sky-500);
+}
+
+.drone-prev {
+    left: 14px;
+}
+
+.drone-next {
+    right: 14px;
+}
+
+@media (max-width: 699px) {
+    .drone-carousel-btn {
+        width: 36px;
+        height: 36px;
+    }
+}
+/* =========================================================
+   Applications - Images
+   ========================================================= */
+
+.application-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin-bottom: 20px;
+}
+/* Company image and name */
+
+.company-image {
+    text-align: center;
+}
+
+.company-image img {
+    width: 70%;
+    max-width: 420px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+    margin: 0 auto;
+}
+
+.company-image h3 {
+    margin-top: 14px;
+    font-size: 24px;
+    font-weight: 700;
+}
+/* =========================================================
+   Why RAMATA Section - Point 12
+   Reduced section height
+   ========================================================= */
+
+.why-section {
+    padding: 55px 0;
+}
+
+@media (max-width: 899px) {
+    .why-section {
+        padding: 50px 0;
     }
 }

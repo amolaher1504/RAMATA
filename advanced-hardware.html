@@ -1,206 +1,647 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hardware Avancé — RAMATA Sarl</title>
-    <meta name="description" content="Services satellitaires, systèmes autonomes et recherche & innovation par RAMATA Sarl, Lubumbashi, RDC.">
+
+    <title>Advanced Hardware — RAMATA Sarl</title>
+
+    <meta name="description" content="Satellite services, autonomous systems and research & innovation by RAMATA Sarl, Lubumbashi, DRC.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+    <!-- Header -->
     <header id="header">
+
         <div class="container nav-container">
+
             <a href="index.html" class="logo" aria-label="RAMATA Sarl">
-                <img src="images/logo.jpeg" alt="RAMATA logo">
-                <span class="logo-text">RAMATA Sarl</span>
+
+                <img src="images/logo.png" alt="RAMATA logo">
+
+                <span class="logo-text">RAMATA </span>
+
             </a>
-            <button class="mobile-menu" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
+
+            <button class="mobile-menu" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="drones.html">Drones</a></li>
-                <li><a href="digital-systems.html">Systèmes Numériques</a></li>
-                <li><a href="advanced-hardware.html" class="active">Hardware Avancé</a></li>
-                <li><a href="index.html#contact" class="btn">Nous contacter</a></li>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="drones.html">Drones</a>
+                </li>
+
+                <li>
+                    <a href="digital-systems.html">Digital Systems</a>
+                </li>
+
+                <li>
+                    <a href="advanced-hardware.html" class="active">
+                        Advanced Hardware
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#contact" class="btn">
+                        Contact Us
+                    </a>
+                </li>
+
             </ul>
+
         </div>
+
     </header>
+
 
     <!-- Hero -->
     <section class="hero">
+
         <div class="container">
+
             <div class="hero-copy">
-                <span class="eyebrow on-dark">Domaine d'expertise</span>
-                <h1>Le matériel de pointe qui soutient l'innovation.</h1>
-                <p>Services satellitaires, robots autonomes et recherche en technologies émergentes : le socle matériel des solutions RAMATA.</p>
+
+                <span class="eyebrow on-dark">
+                    Area of Expertise
+                </span>
+
+                <h1>
+                    Advanced hardware that supports innovation.
+                </h1>
+
+                <p>
+                    Satellite services, autonomous robots and research in emerging technologies:
+                    the hardware foundation of RAMATA's solutions.
+                </p>
+
                 <div class="hero-btns">
-                    <a href="#services" class="btn">Voir nos services</a>
-                    <a href="#contact" class="btn btn-ghost">Nous contacter</a>
+
+                    <a href="#services" class="btn">
+                        View Our Services
+                    </a>
+
+                    <a href="#contact" class="btn btn-ghost">
+                        Contact Us
+                    </a>
+
                 </div>
+
             </div>
+
+
             <div class="hero-visual">
-                <img src="https://images.unsplash.com/photo-1446776877081-d282a0f896e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Services satellitaires RAMATA">
+
+                <img
+                    src="images/hardwares.jpg"
+                    alt="RAMATA Satellite Services"
+                >
+
             </div>
+
         </div>
+
     </section>
+
 
     <!-- Services -->
     <section id="services">
+
         <div class="container">
+
             <div class="section-head center">
-                <span class="eyebrow">Nos services</span>
-                <h2>Trois piliers matériels</h2>
-                <p>De l'orbite à l'atelier de robotique.</p>
+
+                <span class="eyebrow">
+                    Our Services
+                </span>
+
+                <h2>
+                    Three Hardware Pillars
+                </h2>
+
+                <p>
+                    From orbit to the robotics workshop.
+                </p>
+
             </div>
-            <div class="service-card-grid cols-3" style="display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+
+
+            <div
+                class="service-card-grid cols-3"
+                style="display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))"
+            >
+
+                <!-- Service 1 -->
                 <div class="service-card">
-                    <div class="service-media" style="background-image:url('https://images.unsplash.com/photo-1446776877081-d282a0f896e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+
+                    <div
+                        class="service-media"
+                        style="background-image:url('https://images.unsplash.com/photo-1446776877081-d282a0f896e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"
+                    ></div>
+
                     <div class="service-body">
-                        <div class="icon"><i class="fas fa-satellite"></i></div>
-                        <h3>Services Satellitaires</h3>
-                        <p>Intégration et recherche sur les services satellitaires pour les télécommunications, l'observation terrestre, la navigation et la météorologie.</p>
-                        <a href="#contact" class="link-arrow">En savoir plus <i class="fas fa-arrow-right"></i></a>
+
+                        <div class="icon">
+                            <i class="fas fa-satellite"></i>
+                        </div>
+
+                        <h3>
+                            Satellite Services
+                        </h3>
+
+                        <p>
+                            Integration and research on satellite services for telecommunications,
+                            Earth observation, navigation and meteorology.
+                        </p>
+
+                        <a href="#contact" class="link-arrow">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
                     </div>
+
                 </div>
+
+
+                <!-- Service 2 -->
                 <div class="service-card">
-                    <div class="service-media" style="background-image:url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+
+                    <div
+                        class="service-media"
+                        style="background-image:url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"
+                    ></div>
+
                     <div class="service-body">
-                        <div class="icon"><i class="fas fa-robot"></i></div>
-                        <h3>Systèmes Autonomes</h3>
-                        <p>Conception et fabrication de systèmes autonomes (robots) pour l'industrie, l'agriculture, la logistique et les services, adaptés aux contextes africains.</p>
-                        <a href="#contact" class="link-arrow">En savoir plus <i class="fas fa-arrow-right"></i></a>
+
+                        <div class="icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+
+                        <h3>
+                            Autonomous Systems
+                        </h3>
+
+                        <p>
+                            Design and manufacturing of autonomous systems (robots) for industry,
+                            agriculture, logistics and services, adapted to African contexts.
+                        </p>
+
+                        <a href="#contact" class="link-arrow">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
                     </div>
+
                 </div>
+
+
+                <!-- Service 3 -->
                 <div class="service-card">
-                    <div class="service-media" style="background-image:url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+
+                    <div
+                        class="service-media"
+                        style="background-image:url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"
+                    ></div>
+
                     <div class="service-body">
-                        <div class="icon"><i class="fas fa-flask"></i></div>
-                        <h3>Recherche & Innovation</h3>
-                        <p>Recherche et innovation technologique dans les domaines émergents comme la robotique, les matériaux avancés et les énergies renouvelables.</p>
-                        <a href="#contact" class="link-arrow">En savoir plus <i class="fas fa-arrow-right"></i></a>
+
+                        <div class="icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+
+                        <h3>
+                            Research & Innovation
+                        </h3>
+
+                        <p>
+                            Research and technological innovation in emerging fields such as robotics,
+                            advanced materials and renewable energy.
+                        </p>
+
+                        <a href="#contact" class="link-arrow">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- Why -->
-    <section style="background:var(--paper-100)">
+
+    <!-- Why RAMATA -->
+    <!-- Point 12: section height reduced -->
+    <section class="why-section" style="background:var(--paper-100)">
+
         <div class="container">
+
             <div class="split">
+
                 <div>
-                    <span class="eyebrow">Pourquoi RAMATA</span>
-                    <h2>Un laboratoire matériel pensé pour durer.</h2>
-                    <p>Nos équipes conçoivent, testent et déploient du matériel robuste, capable de fonctionner dans des environnements exigeants, avec un support technique local.</p>
+
+                    <span class="eyebrow">
+                        Why RAMATA
+                    </span>
+
+                    <h2>
+                        A hardware laboratory designed to last.
+                    </h2>
+
+                    <p>
+                        Our teams design, test and deploy robust hardware,
+                        capable of operating in demanding environments,
+                        with local technical support.
+                    </p>
+
+
                     <ul class="checklist">
-                        <li><span class="check-mark"><i class="fas fa-check"></i></span> Prototypage et tests en laboratoire local</li>
-                        <li><span class="check-mark"><i class="fas fa-check"></i></span> Robots adaptés à l'industrie et à l'agriculture</li>
-                        <li><span class="check-mark"><i class="fas fa-check"></i></span> Recherche en matériaux et énergies renouvelables</li>
+
+                        <li>
+
+                            <span class="check-mark">
+                                <i class="fas fa-check"></i>
+                            </span>
+
+                            Prototyping and testing in a local laboratory
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="check-mark">
+                                <i class="fas fa-check"></i>
+                            </span>
+
+                            Robots adapted to industry and agriculture
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="check-mark">
+                                <i class="fas fa-check"></i>
+                            </span>
+
+                            Research in materials and renewable energy
+
+                        </li>
+
                     </ul>
+
                 </div>
-                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Laboratoire RAMATA">
+
+
+                <img
+                    src="images/hardware.png"
+                    alt="RAMATA Laboratory"
+                >
+
             </div>
+
         </div>
+
     </section>
+
 
     <!-- Contact -->
     <section class="contact" id="contact">
+
         <div class="container">
+
             <div class="section-head">
-                <span class="eyebrow on-dark">Contact</span>
-                <h2>Un projet de hardware à discuter ?</h2>
-                <p>Notre équipe vous répond à Lubumbashi, RDC.</p>
+
+                <span class="eyebrow on-dark">
+                    Contact
+                </span>
+
+                <h2>
+                    Have a hardware project to discuss?
+                </h2>
+
+                <p>
+                    Our team is available in Lubumbashi, DRC.
+                </p>
+
             </div>
+
+
             <div class="contact-grid">
+
                 <div class="contact-info-list">
+
                     <div class="contact-info-item">
-                        <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+
+                        <span class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </span>
+
                         <div>
-                            <h4>Adresse</h4>
-                            <p>10, route Likasi, Lubumbashi, RDC</p>
+
+                            <h4>
+                                Address
+                            </h4>
+
+                            <p>
+                                10, route Likasi, Lubumbashi, DRC
+                            </p>
+
                         </div>
+
                     </div>
+
+
                     <div class="contact-info-item">
-                        <span class="icon"><i class="fas fa-phone"></i></span>
+
+                        <span class="icon">
+                            <i class="fas fa-phone"></i>
+                        </span>
+
                         <div>
-                            <h4>Téléphone</h4>
-                            <p><a href="tel:+243982550545">+243 98 255 0545</a> · <a href="tel:+243849780336">+243 84 978 0336</a></p>
+
+                            <h4>
+                                Phone
+                            </h4>
+
+                            <p>
+                                <a href="tel:+243982550545">
+                                    +243 98 255 0545
+                                </a>
+                                ·
+                                <a href="tel:+243849780336">
+                                    +243 84 978 0336
+                                </a>
+                            </p>
+
                         </div>
+
                     </div>
+
+
                     <div class="contact-info-item">
-                        <span class="icon"><i class="fas fa-envelope"></i></span>
+
+                        <span class="icon">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+
                         <div>
-                            <h4>Email</h4>
-                            <p><a href="mailto:contact@ramatasarl.tech">contact@ramatasarl.tech</a></p>
+
+                            <h4>
+                                Email
+                            </h4>
+
+                            <p>
+                                <a href="mailto:contact@ramatasarl.tech">
+                                    contact@ramatasarl.tech
+                                </a>
+                            </p>
+
                         </div>
+
                     </div>
+
+
                     <div class="contact-info-item">
-                        <span class="icon"><i class="fas fa-clock"></i></span>
+
+                        <span class="icon">
+                            <i class="fas fa-clock"></i>
+                        </span>
+
                         <div>
-                            <h4>Horaires</h4>
-                            <p>Lun - Sam : 8h13 - 19h17</p>
+
+                            <h4>
+                                Hours
+                            </h4>
+
+                            <p>
+                                Mon - Sat: 8:13 AM - 7:17 PM
+                            </p>
+
                         </div>
+
                     </div>
+
                 </div>
+
+
                 <div class="contact-panel">
-                    <h3>Discutons de votre besoin matériel</h3>
-                    <p>Satellites, robotique ou R&D — parlez-nous de votre projet.</p>
-                    <a href="mailto:contact@ramatasarl.tech" class="btn">Envoyer un e-mail <i class="fas fa-arrow-right"></i></a>
+
+                    <h3>
+                        Let's discuss your hardware needs
+                    </h3>
+
+                    <p>
+                        Satellites, robotics or R&D — tell us about your project.
+                    </p>
+
+                    <a
+                        href="mailto:contact@ramatasarl.tech"
+                        class="btn"
+                    >
+                        Send an Email
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
+
+    <!-- Footer -->
     <footer>
+
         <div class="container">
+
             <div class="footer-grid">
+
+
+                <!-- Footer Column 1 -->
                 <div class="footer-col">
-                    <h3>RAMATA Sarl</h3>
-                    <p>Votre partenaire technologique de confiance à Lubumbashi, RDC. Nous développons des solutions innovantes qui répondent aux défis africains.</p>
+
+                    <h3>
+                        RAMATA Sarl
+                    </h3>
+
+                    <p>
+                        Your trusted technology partner in Lubumbashi, DRC.
+                        We develop innovative solutions that address African challenges.
+                    </p>
+
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
                     </div>
+
                 </div>
+
+
+                <!-- Footer Column 2 -->
                 <div class="footer-col">
-                    <h4>Liens Rapides</h4>
+
+                    <h4>
+                        Quick Links
+                    </h4>
+
                     <ul class="footer-links">
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="index.html#apropos">À propos</a></li>
-                        <li><a href="index.html#vision">Vision & Mission</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
+
+                        <li>
+                            <a href="index.html">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html#apropos">
+                                About
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html#vision">
+                                Vision & Mission
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html#contact">
+                                Contact
+                            </a>
+                        </li>
+
                     </ul>
+
                 </div>
+
+
+                <!-- Footer Column 3 -->
                 <div class="footer-col">
-                    <h4>Nos Domaines</h4>
+
+                    <h4>
+                        Our Areas
+                    </h4>
+
                     <ul class="footer-links">
-                        <li><a href="drones.html">Drones</a></li>
-                        <li><a href="digital-systems.html">Systèmes Numériques</a></li>
-                        <li><a href="advanced-hardware.html">Hardware Avancé</a></li>
+
+                        <li>
+                            <a href="drones.html">
+                                Drones
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="digital-systems.html">
+                                Digital Systems
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="advanced-hardware.html">
+                                Advanced Hardware
+                            </a>
+                        </li>
+
                     </ul>
+
                 </div>
+
+
+                <!-- Footer Column 4 -->
                 <div class="footer-col">
-                    <h4>Contactez-nous</h4>
+
+                    <h4>
+                        Contact Us
+                    </h4>
+
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> 10, route Likasi, Lubumbashi, RDC</li>
-                        <li><i class="fas fa-phone"></i> +243 98 255 0545</li>
-                        <li><i class="fas fa-phone"></i> +243 84 978 0336</li>
-                        <li><i class="fas fa-envelope"></i> contact@ramatasarl.tech</li>
+
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            10, route Likasi, Lubumbashi, DRC
+                        </li>
+
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            +243 98 255 0545
+                        </li>
+
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            +243 84 978 0336
+                        </li>
+
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            contact@ramatasarl.tech
+                        </li>
+
                     </ul>
+
                 </div>
+
             </div>
+
+
             <div class="copyright">
-                <p>&copy; RAMATA Sarl — Tous droits réservés</p>
-                <p>Lubumbashi, RDC</p>
+
+                <p>
+                    &copy; RAMATA Sarl — All rights reserved
+                </p>
+
+                <p>
+                    Lubumbashi, DRC
+                </p>
+
             </div>
+
         </div>
+
     </footer>
 
+
     <script src="main.js"></script>
+
 </body>
 </html>
