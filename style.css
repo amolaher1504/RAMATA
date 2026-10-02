@@ -986,6 +986,6 @@ height: auto;
         padding: 50px 0;
     }
 }
-p {
-    text-align: justify;
+.hero-copy p {
+    text-align: justify !important;
 }
