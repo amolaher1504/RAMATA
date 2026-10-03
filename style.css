@@ -1000,8 +1000,8 @@ height: auto;
         text-align: justify;
 }
 .why-section .split img {
-    width: 80%;
-    max-width: 450px;
+    width: 100%;
+    max-width: 500px;
     height: 350px;
     margin: 0 auto;
     object-fit: cover;
