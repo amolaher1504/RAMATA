@@ -999,6 +999,12 @@ height: auto;
 .card-grid p {
         text-align: justify;
 }
+.split p{
+    text-align: justify;
+}
+.vm-grid p{
+    text-align: justify;
+}
 .why-section .split img {
     width: 100%;
     max-width: 500px;
