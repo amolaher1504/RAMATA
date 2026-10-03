@@ -290,7 +290,11 @@ header {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(10,20,32,0) 40%, rgba(10,20,32,0.5) 100%);
+    background: linear-gradient(
+        180deg,
+        rgba(10,20,32,0) 70%,
+        rgba(10,20,32,0.15) 100%
+    );
 }
 
 /* ==========================================================================
@@ -988,4 +992,17 @@ height: auto;
 }
 .hero-copy p {
     text-align: justify !important;
+}
+.service-card p {
+    text-align: justify;
+}
+.card-grid p {
+        text-align: justify;
+}
+.why-section .split img {
+    width: 80%;
+    max-width: 450px;
+    height: 350px;
+    margin: 0 auto;
+    object-fit: cover;
 }
