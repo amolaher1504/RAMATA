@@ -990,21 +990,25 @@ height: auto;
         padding: 50px 0;
     }
 }
+/*
 .hero-copy p {
     text-align: justify !important;
 }
+
 .service-card p {
     text-align: justify;
 }
+    
 .card-grid p {
         text-align: justify;
 }
+        
 .split p{
     text-align: justify;
 }
 .vm-grid p{
     text-align: justify;
-}
+}*/
 .why-section .split img {
     width: 100%;
     max-width: 500px;
