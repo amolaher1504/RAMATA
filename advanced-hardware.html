@@ -62,8 +62,29 @@
                         Contact Us
                     </a>
                 </li>
+                    <li class="translate-item">
+        <div class="custom-translate">
+            <button id="translateBtn" type="button">
+                <i class="fas fa-globe"></i>
+                Translate
+            </button>
 
-            </ul>
+            <div id="translateMenu" class="translate-menu">
+                <button type="button" onclick="translateLanguage('en')">
+                    English
+                </button>
+
+                <button type="button" onclick="translateLanguage('fr')">
+                    Français
+                </button>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<div id="google_translate_element"></div>
+
+            
 
         </div>
 
@@ -693,7 +714,7 @@
     </footer>
 
 
-    <script src="main.js"></script>
-
+<script src="main.js"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

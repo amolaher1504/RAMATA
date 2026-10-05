@@ -160,3 +160,59 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
+
+
+
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+        {
+            pageLanguage: 'en',
+            includedLanguages: 'en,fr',
+            autoDisplay: false
+        },
+        'google_translate_element'
+    );
+
+    setTimeout(function () {
+        const savedLanguage = localStorage.getItem('ramataLanguage');
+
+        if (savedLanguage && savedLanguage !== 'en') {
+            translateLanguage(savedLanguage);
+        }
+    }, 1000);
+}
+
+function translateLanguage(language) {
+    localStorage.setItem('ramataLanguage', language);
+
+    const select = document.querySelector('.goog-te-combo');
+
+    if (select) {
+        select.value = language;
+        select.dispatchEvent(new Event('change'));
+    }
+
+    const menu = document.getElementById('translateMenu');
+
+    if (menu) {
+        menu.classList.remove('show');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const translateBtn = document.getElementById('translateBtn');
+
+    if (translateBtn) {
+        translateBtn.addEventListener('click', function () {
+
+            const menu = document.getElementById('translateMenu');
+
+            if (menu) {
+                menu.classList.toggle('show');
+            }
+
+        });
+    }
+
+});
