@@ -13,6 +13,10 @@
     // Google Translate Initialization
     // ============================================
 
+    if (sessionStorage.getItem(LANGUAGE_KEY) === "en") {
+        clearGoogleTranslateCookie();
+    }
+
     window.googleTranslateElementInit = function () {
 
         new google.translate.TranslateElement(
@@ -71,23 +75,36 @@
 
     function translateToEnglish() {
 
-        // Clear Google Translate's saved choice
-        // so the next page load stays in English
-        const host = window.location.hostname;
+        clearGoogleTranslateCookie();
+
+        // Reload to show the original English text
+        window.location.reload();
+    }
+
+
+    // ============================================
+    // Clear Google Translate's saved language
+    // (cookie can be set on several domain levels)
+    // ============================================
+
+    function clearGoogleTranslateCookie() {
+
         const expired =
             "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 
-        document.cookie = expired;
-        document.cookie = expired + "; domain=" + host;
-        document.cookie = expired + "; domain=." + host;
+        const parts =
+            window.location.hostname.split(".");
 
-        // Page is currently translated:
-        // reload to show the original English text
-        if (
-            document.documentElement.classList.contains("translated-ltr") ||
-            document.documentElement.classList.contains("translated-rtl")
-        ) {
-            window.location.reload();
+        document.cookie = expired;
+
+        // e.g. www.ramata.tech, ramata.tech
+        for (let i = 0; i < parts.length - 1; i++) {
+
+            const domain =
+                parts.slice(i).join(".");
+
+            document.cookie = expired + "; domain=" + domain;
+            document.cookie = expired + "; domain=." + domain;
         }
     }
 
@@ -174,10 +191,6 @@
                     const language =
                         button.getAttribute("data-lang");
 
-                    if (language === getCurrentLanguage()) {
-                        return;
-                    }
-
                     sessionStorage.setItem(
                         LANGUAGE_KEY,
                         language
@@ -201,20 +214,21 @@
 
 
     // ============================================
-    // Page Loaded
+    // Add Switch Right Away
+    // (header is already on the page, so the switch
+    // appears together with it and nothing moves)
     // ============================================
 
-    if (document.readyState === "loading") {
+    if (document.querySelector(".nav-links")) {
+
+        createLanguageSwitch();
+
+    } else {
 
         document.addEventListener(
             "DOMContentLoaded",
             createLanguageSwitch
         );
-
-    } else {
-
-        createLanguageSwitch();
     }
 
 })();
-
