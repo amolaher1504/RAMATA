@@ -1,8 +1,8 @@
 // ============================================
-// RAMATA - Language Selection
+// RAMATA - Language Switch
 // Default: English
 // Option: French
-// Popup appears again on a new visit/session
+// EN / FR switch in the header (no popup)
 // ============================================
 
 (function () {
@@ -39,98 +39,6 @@
 
 
     // ============================================
-    // Create Language Popup
-    // ============================================
-
-    function createLanguagePopup() {
-
-        // Don't create duplicate popup
-        if (document.getElementById("language-popup")) {
-            return;
-        }
-
-        const popup = document.createElement("div");
-
-        popup.id = "language-popup";
-
-        popup.innerHTML = `
-            <div class="language-box">
-
-                <div class="language-icon">
-                    🌐
-                </div>
-
-                <h2>Choose your language</h2>
-
-                <p>
-                    Would you like to view this website in French?
-                </p>
-
-                <div class="language-buttons">
-
-                    <button
-                        type="button"
-                        class="language-btn not-now-btn"
-                        id="not-now-language-btn">
-                        Not Now
-                    </button>
-
-                    <button
-                        type="button"
-                        class="language-btn french-btn"
-                        id="french-language-btn">
-                        Français
-                    </button>
-
-                </div>
-
-            </div>
-        `;
-
-        document.body.appendChild(popup);
-
-
-        // ========================================
-        // Not Now
-        // ========================================
-
-        document
-            .getElementById("not-now-language-btn")
-            .addEventListener("click", function () {
-
-                // Save English only for this session
-                sessionStorage.setItem(
-                    LANGUAGE_KEY,
-                    "en"
-                );
-
-                closeLanguagePopup();
-            });
-
-
-        // ========================================
-        // French
-        // ========================================
-
-        document
-            .getElementById("french-language-btn")
-            .addEventListener("click", function () {
-
-                // Save French only for this session
-                sessionStorage.setItem(
-                    LANGUAGE_KEY,
-                    "fr"
-                );
-
-                closeLanguagePopup();
-
-                // Translate page
-                translateToFrench();
-            });
-    }
-
-
-    // ============================================
     // Translate to French
     // ============================================
 
@@ -163,88 +71,132 @@
 
     function translateToEnglish() {
 
-        const translateSelect =
-            document.querySelector(".goog-te-combo");
+        // Clear Google Translate's saved choice
+        // so the next page load stays in English
+        const host = window.location.hostname;
+        const expired =
+            "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 
-        if (!translateSelect) {
-            return;
+        document.cookie = expired;
+        document.cookie = expired + "; domain=" + host;
+        document.cookie = expired + "; domain=." + host;
+
+        // Page is currently translated:
+        // reload to show the original English text
+        if (
+            document.documentElement.classList.contains("translated-ltr") ||
+            document.documentElement.classList.contains("translated-rtl")
+        ) {
+            window.location.reload();
         }
-
-        translateSelect.value = "en";
-
-        translateSelect.dispatchEvent(
-            new Event("change")
-        );
     }
 
 
     // ============================================
-    // Close Popup
+    // Current Language
     // ============================================
 
-    function closeLanguagePopup() {
+    function getCurrentLanguage() {
 
-        const popup =
-            document.getElementById("language-popup");
-
-        if (!popup) {
-            return;
-        }
-
-        popup.classList.add(
-            "language-popup-hide"
-        );
-
-        setTimeout(function () {
-
-            popup.remove();
-
-        }, 300);
-    }
-
-
-    // ============================================
-    // Check Language Preference
-    // ============================================
-
-    function checkLanguagePreference() {
-
-        // Check only current browser session
         const savedLanguage =
             sessionStorage.getItem(LANGUAGE_KEY);
 
+        if (savedLanguage) {
+            return savedLanguage;
+        }
 
-        // ----------------------------------------
-        // No saved preference
-        // Show popup
-        // ----------------------------------------
+        // Google Translate remembers French in a cookie
+        if (/googtrans=\/[a-z]+\/fr/.test(document.cookie)) {
+            return "fr";
+        }
 
-        if (!savedLanguage) {
+        return "en";
+    }
 
-            createLanguagePopup();
 
+    // ============================================
+    // Update Switch Buttons
+    // ============================================
+
+    function updateLanguageSwitch(language) {
+
+        document
+            .querySelectorAll(".lang-switch button")
+            .forEach(function (button) {
+
+                const isActive =
+                    button.getAttribute("data-lang") === language;
+
+                button.classList.toggle("active", isActive);
+                button.setAttribute("aria-pressed", isActive);
+            });
+    }
+
+
+    // ============================================
+    // Create EN / FR Switch
+    // (added right after the Contact Us button)
+    // ============================================
+
+    function createLanguageSwitch() {
+
+        const navLinks =
+            document.querySelector(".nav-links");
+
+        // Don't create duplicate switch
+        if (!navLinks || document.querySelector(".lang-switch")) {
             return;
         }
 
+        const item = document.createElement("li");
 
-        // ----------------------------------------
-        // Saved French
-        // Translate automatically
-        // ----------------------------------------
+        item.className = "lang-switch-item";
 
-        if (savedLanguage === "fr") {
+        // "notranslate" keeps Google from translating EN / FR
+        item.innerHTML = `
+            <div class="lang-switch notranslate" translate="no" role="group" aria-label="Language">
 
-            setTimeout(function () {
-                translateToFrench();
-            }, 700);
-        }
+                <button type="button" data-lang="en" aria-pressed="false">EN</button>
 
+                <button type="button" data-lang="fr" aria-pressed="false">FR</button>
 
-        // ----------------------------------------
-        // Saved English
-        // Do nothing
-        // Website remains English
-        // ----------------------------------------
+            </div>
+        `;
+
+        navLinks.appendChild(item);
+
+        item
+            .querySelectorAll("button")
+            .forEach(function (button) {
+
+                button.addEventListener("click", function () {
+
+                    const language =
+                        button.getAttribute("data-lang");
+
+                    if (language === getCurrentLanguage()) {
+                        return;
+                    }
+
+                    sessionStorage.setItem(
+                        LANGUAGE_KEY,
+                        language
+                    );
+
+                    updateLanguageSwitch(language);
+
+                    // Close mobile menu after choosing
+                    navLinks.classList.remove("active");
+
+                    if (language === "fr") {
+                        translateToFrench();
+                    } else {
+                        translateToEnglish();
+                    }
+                });
+            });
+
+        updateLanguageSwitch(getCurrentLanguage());
     }
 
 
@@ -252,17 +204,17 @@
     // Page Loaded
     // ============================================
 
-    document.addEventListener(
-        "DOMContentLoaded",
-        function () {
+    if (document.readyState === "loading") {
 
-            setTimeout(function () {
+        document.addEventListener(
+            "DOMContentLoaded",
+            createLanguageSwitch
+        );
 
-                checkLanguagePreference();
+    } else {
 
-            }, 800);
-
-        }
-    );
+        createLanguageSwitch();
+    }
 
 })();
+
