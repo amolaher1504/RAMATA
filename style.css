@@ -210,6 +210,7 @@ header {
     line-height: 1;
     gap: 4px;
     min-width: 0;
+    transform: translateX(5mm);
 }
 
 .logo img {
@@ -235,6 +236,8 @@ header {
     list-style: none;
     gap: 34px;
     min-width: 0;
+    margin: 0;
+    padding: 0 12px 0 0;
 }
 
 .nav-links a {
@@ -245,13 +248,26 @@ header {
     transition: color 0.2s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a {
+    text-decoration: none;
+    color: var(--slate-300);
+    font-weight: 500;
+    font-size: 0.92rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
     color: var(--white);
 }
 
+.nav-links a.active {
+    color: var(--white);
+    font-weight: 700;
+}
 .nav-links .btn {
     padding: 10px 22px;
+    margin-right: 10px;
+    white-space: nowrap;
 }
 
 .mobile-menu {
@@ -321,9 +337,14 @@ header {
     position: relative;
     border-radius: var(--radius-md);
     overflow: hidden;
+
     aspect-ratio: 4 / 3;
-    width: 100%;
-    max-width: 100%;
+
+    width: 85%;
+    max-width: 500px;
+
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-visual img {
@@ -334,8 +355,10 @@ header {
 
 .hero-visual::after {
     content: '';
+
     position: absolute;
     inset: 0;
+
     background: linear-gradient(
         180deg,
         rgba(10,20,32,0) 70%,
@@ -953,11 +976,11 @@ footer {
 
 .drone-carousel {
     position: relative;
-    width: 100%;
-    max-width: 100%;
+    width: 50%;
+    max-width: 50%;
     border-radius: var(--radius-md);
     overflow: hidden;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3/2;
     min-width: 0;
 }
 
@@ -1013,6 +1036,12 @@ footer {
     right: 14px;
 }
 
+@media (max-width: 699px) {
+    .drone-carousel-btn {
+        width: 36px;
+        height: 36px;
+    }
+}
 /* ==========================================================================
    LANGUAGE POPUP
    ========================================================================== */
