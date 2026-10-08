@@ -1588,8 +1588,12 @@ iframe {
 @media (max-width: 699px) {
 
     /* Header */
+    .nav-container {
+        padding: 8px 16px;
+    }
+
     .logo img {
-        width: 84px;
+        width: 76px;
     }
 
     .lang-switch button {
@@ -1598,43 +1602,55 @@ iframe {
         font-size: 0.8rem;
     }
 
-    /* General spacing */
+    /* General spacing and text */
     section {
-        padding: 44px 0;
+        padding: 32px 0;
     }
 
     .section-head {
-        margin-bottom: 26px;
+        margin-bottom: 18px;
     }
 
     .section-head p {
-        font-size: 0.98rem;
-        margin-top: 8px;
+        font-size: 0.92rem;
+        margin-top: 6px;
+    }
+
+    .eyebrow {
+        margin-bottom: 8px;
     }
 
     h2 {
-        font-size: 1.45rem;
+        font-size: 1.3rem;
+    }
+
+    .split p,
+    .vm-card p,
+    .contact-panel p {
+        font-size: 0.92rem;
+        line-height: 1.55;
     }
 
     .split,
     .hero .container {
-        gap: 24px;
+        gap: 18px;
     }
 
     /* Hero */
     .hero {
-        padding-top: 112px;
-        padding-bottom: 44px;
+        padding-top: 100px;
+        padding-bottom: 32px;
     }
 
     .hero-copy h1 {
-        font-size: 2rem;
-        margin-bottom: 14px;
+        font-size: 1.75rem;
+        margin-bottom: 12px;
     }
 
     .hero-copy p {
-        font-size: 1rem;
-        margin-bottom: 22px;
+        font-size: 0.95rem;
+        line-height: 1.55;
+        margin-bottom: 18px;
     }
 
     .hero-btns {
@@ -1645,27 +1661,28 @@ iframe {
     .hero-btns .btn {
         flex: 1 1 0;
         justify-content: center;
-        padding: 13px 12px;
+        padding: 12px 10px;
         text-align: center;
     }
 
     .hero-visual {
         width: 100%;
         max-width: 100%;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 2 / 1;
     }
 
     /* Homepage hero: background photo (images/background.png)
+       shown full width at the bottom, never cropped or stretched,
        with a dark overlay so the text stays readable */
     .hero:has(img[src*="logo-2"]) {
         background:
             linear-gradient(
                 180deg,
-                rgba(10, 20, 32, 0.94) 0%,
-                rgba(10, 20, 32, 0.82) 55%,
-                rgba(10, 20, 32, 0.55) 100%
+                rgba(10, 20, 32, 0.96) 0%,
+                rgba(10, 20, 32, 0.85) 45%,
+                rgba(10, 20, 32, 0.35) 100%
             ),
-            url("images/background.png") center bottom / cover no-repeat,
+            url("images/background.png") center bottom / 100% auto no-repeat,
             var(--navy-950);
     }
 
@@ -1675,99 +1692,152 @@ iframe {
         display: none;
     }
 
-    /* Stats */
+    /* Stats: one row of four */
     .stats {
-        padding: 30px 0;
+        padding: 20px 0;
     }
 
     .stats .container {
-        gap: 20px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
     }
 
     .stats .stat-num {
-        font-size: 1.7rem;
+        font-size: 1.3rem;
+    }
+
+    .stats .stat-label {
+        font-size: 0.7rem;
+        line-height: 1.3;
+        margin-top: 2px;
+    }
+
+    /* Checklists */
+    .checklist {
+        gap: 8px;
+        margin: 14px 0 16px;
+    }
+
+    .checklist li {
+        font-size: 0.9rem;
     }
 
     /* About checklist: 3 compact columns */
     #apropos .checklist {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-        margin: 20px 0 22px;
+        gap: 10px;
     }
 
     #apropos .checklist li {
         flex-direction: column;
         align-items: flex-start;
-        gap: 8px;
-        font-size: 0.85rem;
-        line-height: 1.4;
-    }
-
-    .checklist {
-        gap: 12px;
-        margin: 20px 0 22px;
+        gap: 6px;
+        font-size: 0.8rem;
+        line-height: 1.35;
     }
 
     /* Cards */
     .vm-grid,
     .card-grid,
     .service-card-grid {
-        gap: 16px;
+        gap: 12px;
     }
 
     .vm-card,
     .info-card {
-        padding: 20px;
+        padding: 16px 18px;
     }
 
     .vm-card h3 {
-        margin-bottom: 6px;
+        font-size: 1.05rem;
+        margin-bottom: 4px;
     }
 
     .service-card .service-media {
-        height: 150px;
+        height: 120px;
     }
 
     .service-card .service-body {
-        padding: 18px 20px 20px;
+        padding: 14px 16px 16px;
+    }
+
+    .service-card h3 {
+        margin-bottom: 6px;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
     }
 
     .spec-card,
     .spec-carousel .spec-card {
-        min-height: 240px;
+        min-height: 200px;
     }
 
     .spec-card-body {
-        padding: 20px;
+        padding: 16px;
+    }
+
+    /* Drone applications: two cards per row */
+    #applications .service-card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+    }
+
+    .drone-carousel {
+        aspect-ratio: 16 / 10;
+    }
+
+    #applications .vm-card {
+        padding: 10px 10px 12px;
+    }
+
+    #applications .vm-card h3 {
+        font-size: 0.95rem;
+    }
+
+    #applications .vm-card p {
+        font-size: 0.8rem;
+        line-height: 1.4;
     }
 
     .application-image {
-        height: 140px;
-        margin-bottom: 14px;
+        height: 90px;
+        margin-bottom: 8px;
+        border-radius: 8px;
     }
 
     .why-section {
-        padding: 44px 0;
+        padding: 32px 0;
     }
 
     .why-section .split img {
-        height: 210px;
+        height: 170px;
     }
 
     /* Contact */
     .contact-panel {
-        padding: 22px;
+        padding: 18px;
+    }
+
+    .contact-panel h3 {
+        margin-bottom: 6px;
+    }
+
+    .contact-panel p {
+        margin-bottom: 14px;
     }
 
     /* Footer: links side by side */
     footer {
-        padding: 40px 0 22px;
+        padding: 28px 0 18px;
     }
 
     .footer-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 26px 16px;
-        padding-bottom: 26px;
+        gap: 20px 16px;
+        padding-bottom: 18px;
     }
 
     .footer-grid > .footer-col:first-child,
@@ -1778,14 +1848,18 @@ iframe {
 
     .footer-col h3,
     .footer-col h4 {
+        margin-bottom: 10px;
+    }
+
+    .footer-col p {
         margin-bottom: 12px;
     }
 
     .footer-links {
-        gap: 8px;
+        gap: 6px;
     }
 
     .copyright {
-        padding-top: 18px;
+        padding-top: 14px;
     }
 }
