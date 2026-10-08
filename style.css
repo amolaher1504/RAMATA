@@ -2263,3 +2263,12 @@ iframe {
         position: relative;
     }
 }
+
+/* Phones: hide the "Our Vision & Mission" link in About
+   (the section is right below it) */
+@media (max-width: 699px) {
+
+    #apropos .link-arrow {
+        display: none;
+    }
+}
