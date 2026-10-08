@@ -1993,3 +1993,180 @@ iframe {
         height: 150px;
     }
 }
+
+/* Phones: smaller overall scale (text, header, buttons, images) */
+@media (max-width: 699px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    /* Header */
+    .nav-container {
+        padding: 6px 14px;
+    }
+
+    .logo img {
+        width: 64px;
+    }
+
+    .mobile-menu {
+        font-size: 1.2rem;
+        padding: 6px 8px;
+    }
+
+    .lang-switch {
+        padding: 2px;
+    }
+
+    .lang-switch button {
+        min-width: 32px;
+        padding: 4px 8px;
+        font-size: 0.74rem;
+    }
+
+    /* Section spacing */
+    section,
+    .why-section {
+        padding: 24px 0;
+    }
+
+    .section-head {
+        margin-bottom: 12px;
+    }
+
+    .eyebrow {
+        font-size: 0.68rem;
+        margin-bottom: 6px;
+    }
+
+    h2 {
+        font-size: 1.15rem;
+    }
+
+    h3 {
+        font-size: 0.98rem;
+    }
+
+    .section-head p,
+    .split p,
+    .vm-card p,
+    .service-card p,
+    .contact-panel p,
+    .checklist li {
+        font-size: 0.86rem;
+    }
+
+    .btn {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+
+    .link-arrow {
+        font-size: 0.84rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding-top: 84px;
+        padding-bottom: 24px;
+    }
+
+    .hero-copy h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .hero-copy p {
+        font-size: 0.88rem;
+        margin-bottom: 14px;
+    }
+
+    .hero-btns .btn {
+        padding: 10px 8px;
+    }
+
+    /* Stats */
+    .stats {
+        padding: 16px 0;
+    }
+
+    .stats .stat-num {
+        font-size: 1.15rem;
+    }
+
+    .stats .stat-label {
+        font-size: 0.66rem;
+    }
+
+    /* About checklist */
+    #apropos .checklist li {
+        font-size: 0.76rem;
+    }
+
+    .checklist .check-mark {
+        width: 20px;
+        height: 20px;
+        font-size: 0.7rem;
+    }
+
+    /* Images and cards */
+    .service-card .service-media {
+        height: 100px;
+    }
+
+    .spec-carousel .spec-card,
+    .spec-card {
+        min-height: 160px;
+    }
+
+    .spec-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .spec-card p {
+        font-size: 0.84rem;
+    }
+
+    .why-section .split img {
+        height: 130px;
+    }
+
+    .application-image {
+        height: 80px;
+    }
+
+    #applications .vm-card p {
+        font-size: 0.76rem;
+    }
+
+    .contact-panel {
+        padding: 16px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 22px 0 14px;
+    }
+
+    .footer-col h3,
+    .footer-col h4 {
+        font-size: 0.92rem;
+        margin-bottom: 8px;
+    }
+
+    .footer-col p,
+    .footer-links a,
+    .footer-links li {
+        font-size: 0.82rem;
+    }
+
+    .social-links a {
+        width: 32px;
+        height: 32px;
+    }
+
+    .copyright {
+        font-size: 0.78rem;
+    }
+}
