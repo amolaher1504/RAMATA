@@ -2235,3 +2235,13 @@ iframe {
         gap: 4px;
     }
 }
+
+/* Phones: show the full "Why RAMATA" photo (no cropping) */
+@media (max-width: 699px) {
+
+    .why-section .split img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
