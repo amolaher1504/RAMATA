@@ -1674,7 +1674,8 @@ iframe {
     /* Homepage hero: background photo (images/background.png)
        shown full width at the bottom, never cropped or stretched,
        with a dark overlay so the text stays readable */
-    .hero:has(img[src*="logo-2"]) {
+    .hero:has(img[src*="logo-2"]),
+    .hero:has(a[href="#specialisations"]) {
         background:
             linear-gradient(
                 180deg,
@@ -1683,6 +1684,7 @@ iframe {
                 rgba(10, 20, 32, 0.35) 100%
             ),
             url("images/background.png") center bottom / 100% auto no-repeat,
+            url("background.png") center bottom / 100% auto no-repeat,
             var(--navy-950);
     }
 
