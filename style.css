@@ -2245,3 +2245,21 @@ iframe {
         object-fit: contain;
     }
 }
+
+/* Phones: stop hidden Google Translate helpers from adding
+   empty scroll space below the footer */
+@media (max-width: 699px) {
+
+    body > .skiptranslate,
+    .goog-te-spinner-pos,
+    .goog-te-menu-frame,
+    #goog-gt-tt {
+        display: none !important;
+        height: 0 !important;
+    }
+
+    body {
+        min-height: 0;
+        position: relative;
+    }
+}
