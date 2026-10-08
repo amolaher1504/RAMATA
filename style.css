@@ -2170,3 +2170,68 @@ iframe {
         font-size: 0.78rem;
     }
 }
+
+/* Phones: shorter Vision & Mission, About and Our Services.
+   Cards become a side-swipe row (all text kept). */
+@media (max-width: 699px) {
+
+    /* Swipeable card rows */
+    .vm-grid,
+    #services .service-card-grid {
+        display: flex !important;
+        gap: 10px !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        margin: 0 -16px;
+        width: calc(100% + 32px);
+        max-width: none;
+        padding: 0 16px 4px;
+        scroll-padding: 0 16px;
+    }
+
+    .vm-grid::-webkit-scrollbar,
+    #services .service-card-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .vm-grid > .vm-card,
+    #services .service-card-grid > .service-card {
+        flex: 0 0 84%;
+        max-width: 84%;
+        scroll-snap-align: start;
+    }
+
+    .vm-card p {
+        font-size: 0.82rem;
+        line-height: 1.45;
+    }
+
+    #services .service-card .service-media {
+        height: 90px;
+    }
+
+    #services .service-card p {
+        font-size: 0.82rem;
+        line-height: 1.45;
+    }
+
+    /* About RAMATA */
+    #apropos h2 {
+        font-size: 1.05rem;
+    }
+
+    #apropos .split p {
+        font-size: 0.82rem;
+        line-height: 1.45;
+    }
+
+    #apropos .checklist {
+        margin: 10px 0;
+    }
+
+    #apropos .checklist li {
+        font-size: 0.72rem;
+        gap: 4px;
+    }
+}
