@@ -2274,3 +2274,8 @@ iframe {
         display: none;
     }
 }
+@media (max-width: 699px) {
+    #apropos .link-arrow {
+        display: none;
+    }
+}
