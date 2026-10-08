@@ -1863,3 +1863,133 @@ iframe {
         padding-top: 14px;
     }
 }
+
+/* Phones: extra compact sections (services, Why RAMATA,
+   About, Vision & Mission, Our Areas). Text is unchanged. */
+@media (max-width: 699px) {
+
+    section {
+        padding: 28px 0;
+    }
+
+    .section-head {
+        margin-bottom: 14px;
+    }
+
+    .section-head p {
+        line-height: 1.5;
+    }
+
+    .split p,
+    .vm-card p,
+    .service-card p,
+    .contact-panel p {
+        line-height: 1.5;
+    }
+
+    /* About */
+    #apropos h2 {
+        margin-bottom: 6px;
+    }
+
+    #apropos .checklist {
+        margin: 12px 0 12px;
+    }
+
+    /* Vision & Mission cards */
+    .vm-grid {
+        gap: 10px;
+    }
+
+    .vm-card {
+        padding: 14px 16px;
+    }
+
+    .vm-card p {
+        font-size: 0.88rem;
+    }
+
+    /* Our Areas carousel: arrows sit over the card edges,
+       so the card is wider and its text takes fewer lines */
+    .spec-carousel {
+        gap: 0;
+    }
+
+    .spec-carousel .spec-grid {
+        padding: 4px 0 6px;
+    }
+
+    .spec-carousel .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 34px;
+        height: 34px;
+        background: rgba(10, 20, 32, 0.75);
+    }
+
+    .spec-carousel .carousel-btn:hover {
+        transform: translateY(-50%) scale(1.05);
+    }
+
+    .spec-carousel .carousel-prev {
+        left: 6px;
+    }
+
+    .spec-carousel .carousel-next {
+        right: 6px;
+    }
+
+    .spec-carousel .spec-card,
+    .spec-card {
+        min-height: 180px;
+    }
+
+    .spec-card-body {
+        padding: 14px 46px 14px 46px;
+    }
+
+    .spec-card .link-arrow {
+        margin-top: 8px;
+    }
+
+    /* Services cards (Digital Systems / Advanced Hardware) */
+    .service-card-grid {
+        gap: 12px !important;
+    }
+
+    .service-card .service-media {
+        height: 110px;
+    }
+
+    .service-card .service-body {
+        padding: 12px 14px 14px;
+    }
+
+    .service-card h3 {
+        font-size: 1.02rem;
+        margin-bottom: 4px;
+    }
+
+    .service-card p {
+        font-size: 0.88rem;
+        margin-bottom: 8px;
+    }
+
+    /* Why RAMATA */
+    .why-section {
+        padding: 28px 0;
+    }
+
+    .why-section h2 {
+        margin-bottom: 6px;
+    }
+
+    .why-section .checklist {
+        margin: 12px 0 4px;
+    }
+
+    .why-section .split img {
+        height: 150px;
+    }
+}
